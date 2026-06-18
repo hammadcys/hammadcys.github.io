@@ -75,11 +75,29 @@ if (form) {
     const btn = document.getElementById('cf-submit');
     btn.textContent = 'sending...';
     btn.disabled = true;
+    status.textContent = '';
 
-    // swap this URL for your Formspree endpoint when ready
-    await new Promise(r => setTimeout(r, 1200));
-    status.textContent = '✓ message sent. i\'ll get back to you.';
-    form.reset();
+    try {
+      const res = await fetch('https://formspree.io/f/xnjykovj', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (res.ok) {
+        status.textContent = '✓ message sent. i\'ll get back to you.';
+        status.style.color = '#b5ff47';
+        form.reset();
+      } else {
+        const data = await res.json();
+        status.textContent = data.errors ? data.errors.map(e => e.message).join(', ') : 'something went wrong. try again.';
+        status.style.color = '#ff4747';
+      }
+    } catch (err) {
+      status.textContent = 'network error. try again.';
+      status.style.color = '#ff4747';
+    }
+
     btn.textContent = 'send it →';
     btn.disabled = false;
   });
