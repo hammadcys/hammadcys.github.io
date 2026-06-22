@@ -153,10 +153,32 @@ body {
   transition: opacity 0.2s;
 }
 
+/* ── HERO SPECIALTY TAGS ── */
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 40px;
+}
+.hero-tag {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--accent); border: 1px solid rgba(200,255,0,0.35);
+  background: rgba(200,255,0,0.07);
+  padding: 6px 14px; border-radius: 30px;
+  letter-spacing: 0.06em;
+  animation: tag-glow 3s ease-in-out infinite alternate;
+}
+.hero-tag:nth-child(2) { animation-delay: 0.4s; color: #a78bfa; border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.07); }
+.hero-tag:nth-child(3) { animation-delay: 0.8s; color: #38bdf8; border-color: rgba(56,189,248,0.35); background: rgba(56,189,248,0.07); }
+.hero-tag:nth-child(4) { animation-delay: 1.2s; }
+@keyframes tag-glow {
+  from { box-shadow: none; }
+  to { box-shadow: 0 0 10px rgba(200,255,0,0.15); }
+}
+
 .hero-bottom {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 24px;
 }
+
 .hero-id {
   display: flex; align-items: center; gap: 16px;
 }
@@ -332,7 +354,17 @@ body {
   border: 1px solid var(--border); border-radius: 3px; padding: 3px 8px;
 }
 
-/* ── EXPERIENCE / ABOUT ── */
+/* AI/RAG project card accent */
+.proj-card--ai { border-top: 2px solid #a78bfa; }
+.proj-card--ai:hover { background: rgba(167,139,250,0.05); }
+.proj-card-badge-ai {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 700;
+  color: #a78bfa; border: 1px solid rgba(167,139,250,0.4);
+  background: rgba(167,139,250,0.1);
+  padding: 3px 8px; border-radius: 20px; letter-spacing: 0.06em;
+}
+
+
 #about { border-bottom: 1px solid var(--border); }
 .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 

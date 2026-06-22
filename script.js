@@ -38,7 +38,7 @@ document.querySelectorAll('.mm-link').forEach(l => {
 });
 
 // ── WORD SWAP (hero) ──
-const words = ['APIs', 'backends', 'systems', 'FastAPI', 'NestJS'];
+const words = ['APIs', 'Agentic AI', 'RAG pipelines', 'backends', 'LLM agents', 'systems', 'FastAPI', 'NestJS'];
 let wi = 0;
 const wordEl = document.getElementById('wordSwap');
 if (wordEl) {

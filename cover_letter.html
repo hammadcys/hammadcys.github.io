@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cover Letter — Hammad Ur Rehman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Force A4 page size when printing */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    :root {
+      --ink: #0f0f11;
+      --muted: #555566;
+      --accent: #4f46e5;
+      --accent-light: #ede9fe;
+      --border: #e2e2ec;
+      --bg: #f5f5f8;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 20px 60px;
+    }
+
+    /* A4 = 210mm × 297mm = 794px × 1123px at 96dpi */
+    .page {
+      background: var(--white);
+      width: 794px;
+      height: 1123px;
+      overflow: hidden;
+      padding: 40px 62px 32px;
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Accent bar at top */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #818cf8);
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid var(--border);
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+
+    .header-left h1 {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .header-left .role {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      background: var(--accent-light);
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .header-right a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── SALUTATION ── */
+    .salutation {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text {
+      flex: 1;
+    }
+
+    .body-text p {
+      font-size: 12px;
+      line-height: 1.65;
+      color: #1e1e2e;
+      margin-bottom: 9px;
+    }
+
+    .body-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ── PROJECTS LIST ── */
+    .proj-list {
+      margin: 2px 0 9px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .proj-list li {
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #1e1e2e;
+      padding: 4px 10px 4px 11px;
+      margin-bottom: 3px;
+      border-left: 2.5px solid var(--accent);
+      background: var(--accent-light);
+      border-radius: 0 5px 5px 0;
+    }
+
+    .proj-list li strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── CLOSING ── */
+    .closing {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #1e1e2e;
+      flex-shrink: 0;
+    }
+
+    /* ── SIGNATURE + FOOTER ROW ── */
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .signature .sign-label {
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .signature .sign-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+    }
+
+    .signature .sign-title {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .footer-tag {
+      font-size: 10px;
+      color: #bbb;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .footer-tag span {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      color: var(--accent);
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        border-radius: 0;
+        width: 210mm;
+        height: 297mm;
+        padding: 14mm 20mm 12mm;
+      }
+
+      .print-btn {
+        display: none !important;
+      }
+    }
+
+    /* ── PRINT BUTTON (screen only) ── */
+    .print-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 999;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(79, 70, 229, 0.45);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Hammad Ur Rehman</h1>
+        <div class="role">Backend · Agentic AI · RAG Systems</div>
+      </div>
+      <div class="header-right">
+        Wah Cantt, Pakistan<br />
+        <a href="mailto:hammad.rehman2004@gmail.com">hammad.rehman2004@gmail.com</a><br />
+        <a href="https://linkedin.com/in/hammad2004">linkedin.com/in/hammad2004</a><br />
+        <a href="https://github.com/hammadcys">github.com/hammadcys</a>
+      </div>
+    </div>
+
+    <!-- SALUTATION -->
+    <div class="salutation">Dear Hiring Manager,</div>
+
+    <!-- BODY -->
+    <div class="body-text">
+
+      <p>
+        I am a Computer Science graduate from Bahria University with a focus on backend engineering and AI systems.
+        I am actively seeking a backend or AI/ML engineering role where I can contribute to production-grade systems
+        and continue developing my expertise in <strong>agentic AI</strong> and <strong>RAG pipelines</strong>.
+      </p>
+
+      <p>
+        During my internship at <strong>Agentic Soft</strong>, I developed and maintained production RESTful APIs
+        using FastAPI and NestJS, implemented JWT-based authentication and authorisation flows, and participated
+        actively in code reviews to uphold clean architecture standards.
+        At <strong>SoftBox Technologies</strong>, I performed exploratory data analysis using Pandas and NumPy,
+        produced Power BI dashboards, and presented data findings to non-technical stakeholders.
+      </p>
+
+      <p>
+        My Final Year Project, <strong>VisiHealth AI</strong>, represents my strongest demonstration of end-to-end
+        delivery. I designed a Medical Visual Question Answering system using a Dual-Encoder and Multi-token
+        Cross-Attention architecture with BioLinkBERT, trained on the SLAKE dataset, and engineered the complete
+        backend infrastructure — including inference APIs, ROI localisation, and data processing pipelines.
+        The project was awarded <strong>1st place at the BSEAS FYP Open House 2026</strong>.
+      </p>
+
+      <p>In addition, I have delivered the following projects:</p>
+
+      <ul class="proj-list">
+        <li><strong>AccessHire</strong> — Engineered the complete backend for an AI-powered job portal for visually
+          impaired users, including NestJS REST APIs, JWT authentication, MongoDB integration, a content-based
+          recommender system, and a FastAPI microservice for speech-to-text and text-to-speech functionality.</li>
+        <li><strong>VelocityMD</strong> — Designed and implemented RESTful APIs and scheduling logic for a doctor
+          appointment system, including conflict detection and full authentication (FastAPI).</li>
+        <li><strong>Metro Ticketing System</strong> — Developed a full-stack MERN ticketing platform encompassing
+          seat selection through to booking confirmation.</li>
+      </ul>
+
+      <p>
+        I am confident that my technical background, combined with my growing knowledge of agentic AI and
+        retrieval-augmented generation, positions me well to make an immediate and meaningful contribution
+        to your engineering team.
+      </p>
+
+    </div>
+
+    <div class="closing">
+      <p>
+        I would welcome the opportunity to discuss how my experience and skills align with your team's needs.
+        Please feel free to reach me at
+        <a href="mailto:hammad.rehman2004@gmail.com"
+          style="color:#4f46e5;text-decoration:none;font-weight:500;">hammad.rehman2004@gmail.com</a>
+        or via LinkedIn at
+        <a href="https://linkedin.com/in/hammad2004"
+          style="color:#4f46e5;text-decoration:none;font-weight:500;">linkedin.com/in/hammad2004</a>.
+        Thank you for your time and consideration.
+      </p>
+    </div>
+
+
+    <!-- SIGNATURE + FOOTER (same row, above the border) -->
+    <div class="bottom-row">
+      <div class="signature">
+        <div class="sign-label">Sincerely</div>
+        <div class="sign-name">Hammad Ur Rehman</div>
+        <div class="sign-title">CS Graduate &middot; Backend &amp; AI Engineer</div>
+      </div>
+      <div class="footer-tag">
+        cover letter &middot; 2026
+        <span>hammad_</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PRINT BUTTON -->
+  <button class="print-btn" onclick="window.print()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="6 9 6 2 18 2 18 9"></polyline>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <rect x="6" y="14" width="12" height="8"></rect>
+    </svg>
+    Save as PDF
+  </button>
+
+</body>
+
+</html>
