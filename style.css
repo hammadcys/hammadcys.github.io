@@ -407,7 +407,39 @@ body {
 }
 .exp-divider { height: 1px; background: var(--border); margin: 0 0 40px; }
 
+/* ── CERTIFICATIONS ── */
+#certs { border-bottom: 1px solid var(--border); }
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.cert-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%);
+  transition: filter 0.25s;
+}
+.cert-card:hover .cert-img { filter: grayscale(0%); }
+
+@media (max-width: 900px) { .certs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .certs-grid { grid-template-columns: 1fr; } }
+
 /* ── CONTACT ── */
+
 #contact { }
 .contact-inner {
   display: grid; grid-template-columns: 1fr 1fr;
