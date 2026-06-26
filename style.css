@@ -407,29 +407,7 @@ body {
 }
 .exp-divider { height: 1px; background: var(--border); margin: 0 0 40px; }
 
-/* ── CERTIFICATIONS (TEXT LIST) ── */
-.cert-text-list {
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-.cert-text-h3 {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.cert-bullets {
-  list-style: none; display: flex; flex-direction: column; gap: 8px;
-}
-.cert-bullets li {
-  font-size: 0.95rem; color: var(--muted); padding-left: 16px; position: relative;
-}
-.cert-bullets li::before {
-  content: '✓'; position: absolute; left: 0; color: var(--accent); font-size: 0.85rem;
-}
+
 
 /* ── CONTACT ── */
 
